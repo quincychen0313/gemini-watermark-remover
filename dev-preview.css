@@ -333,6 +333,31 @@ a {
   height: 1rem;
 }
 
+.brand-logo-link {
+  display: inline-block;
+  margin: 0 auto 1.25rem;
+  border-radius: 1rem;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.brand-logo-link:hover {
+  transform: translateY(-2px);
+  opacity: 0.88;
+}
+
+.brand-logo-link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 5px;
+}
+
+.brand-logo {
+  display: block;
+  width: clamp(8.5rem, 16vw, 11rem);
+  height: auto;
+  border-radius: 1rem;
+  filter: drop-shadow(0 8px 18px rgba(15, 23, 42, 0.08));
+}
+
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
