@@ -2,13 +2,13 @@
 
 :root {
   color-scheme: light;
-  --primary: #10b981;
-  --primary-hover: #059669;
+  --primary: #1f55dc;
+  --primary-hover: #1747c3;
 }
 
 body {
   margin: 0;
-  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
   transition: opacity 0s;
 }
 
@@ -356,6 +356,240 @@ a {
   height: auto;
   border-radius: 1rem;
   filter: drop-shadow(0 8px 18px rgba(15, 23, 42, 0.08));
+}
+
+/* Reference-inspired landing layout */
+.landing-body {
+  overflow-x: hidden;
+  background: #f4f6f8;
+  color: #060b1a;
+}
+
+.landing-main { background: #f4f6f8; }
+
+.brand-footer {
+  background: #081022;
+  color: #fff;
+}
+.brand-footer p { color: #aeb8ca; }
+
+.brand-bar {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  z-index: 50;
+  display: flex;
+  width: min(1320px, calc(100% - 48px));
+  transform: translateX(-50%);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #0a0f1e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+.brand-lockup img {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(14, 27, 52, .09);
+}
+
+.source-link {
+  color: #667085;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.source-link:hover { color: #101828; }
+
+.landing-hero {
+  min-height: 820px;
+  padding-top: 112px;
+  overflow: hidden;
+}
+
+.landing-hero h1 {
+  margin: 0 auto;
+  color: #050a19;
+  font-size: clamp(42px, 5vw, 76px);
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: -.055em;
+}
+
+.hero-copy {
+  max-width: 760px;
+  margin: 30px auto 28px;
+  color: #536071;
+  font-size: clamp(16px, 1.45vw, 22px);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.media-tabs {
+  display: inline-flex;
+  gap: 3px;
+  margin: 0 auto 38px;
+  padding: 4px;
+  border-radius: 18px;
+  background: #e9ecf1;
+}
+
+.media-tab {
+  display: inline-flex;
+  min-width: 160px;
+  height: 54px;
+  padding: 0 22px;
+  border-radius: 14px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #8492a8;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background .2s ease, box-shadow .2s ease, color .2s ease, transform .2s ease;
+}
+
+.media-tab:hover { color: #263248; }
+.media-tab.active {
+  background: #fff;
+  color: #101828;
+  box-shadow: 0 2px 5px rgba(16, 24, 40, .16);
+}
+.media-tab svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.beta {
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: #e7efff;
+  color: #2463ef;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .03em;
+}
+
+.upload-stage {
+  position: relative;
+  width: min(1020px, calc(100% - 32px));
+  min-height: 420px;
+  margin: 0 auto;
+}
+
+.hero-dropzone {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  width: min(760px, calc(100% - 40px));
+  min-height: 390px;
+  margin: 0 auto;
+  padding: 54px 36px;
+  border: 5px solid #fff;
+  border-radius: 38px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #fff;
+  background-image:
+    linear-gradient(45deg, #eef0f2 25%, transparent 25%),
+    linear-gradient(-45deg, #eef0f2 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #eef0f2 75%),
+    linear-gradient(-45deg, transparent 75%, #eef0f2 75%);
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+  background-size: 20px 20px;
+  box-shadow: 0 32px 60px rgba(42, 74, 139, .13);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.hero-dropzone:hover,
+.hero-dropzone:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 38px 70px rgba(42, 74, 139, .18);
+  outline: none;
+}
+
+.choose-button {
+  min-width: 330px;
+  min-height: 76px;
+  padding: 0 34px;
+  border-radius: 18px;
+  background: #1f55dc;
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(31, 85, 220, .22);
+  font-size: 24px;
+  font-weight: 800;
+}
+.plus { margin-right: 8px; font-size: 34px; font-weight: 300; line-height: 1; }
+.drop-title { margin: 28px 0 0; color: #070b16; font-size: 21px; font-weight: 800; }
+.drop-note { margin: 12px 0 0; color: #697586; font-size: 14px; font-weight: 550; }
+
+.art-card {
+  position: absolute;
+  z-index: 1;
+  top: 18px;
+  width: 310px;
+  height: 300px;
+  padding: 14px;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 18px 46px rgba(42, 55, 86, .14);
+}
+.art-card span { display: block; width: 100%; height: 100%; border-radius: 16px; }
+.art-left { left: -82px; transform: rotate(-7deg); }
+.art-right { right: -82px; transform: rotate(8deg); }
+.art-left span {
+  background:
+    radial-gradient(circle at 20% 35%, rgba(255,255,255,.75) 0 4%, transparent 17%),
+    radial-gradient(circle at 72% 24%, #ff7ac3 0 8%, transparent 28%),
+    radial-gradient(circle at 55% 80%, #62d9e7 0 8%, transparent 34%),
+    linear-gradient(135deg, #5fe7f2 0%, #b4f0ff 24%, #ff81c8 50%, #8c72eb 72%, #44d7e8 100%);
+}
+.art-right span {
+  background:
+    radial-gradient(ellipse at 80% 10%, #ef7186 0 9%, transparent 36%),
+    radial-gradient(ellipse at 18% 85%, #071018 0 18%, transparent 45%),
+    linear-gradient(145deg, #9b243d 0%, #f06478 28%, #253a56 55%, #008ba2 78%, #061017 100%);
+}
+
+@media (max-width: 900px) {
+  .landing-hero { padding-top: 124px; }
+  .art-card { width: 250px; height: 260px; opacity: .7; }
+  .art-left { left: -120px; }
+  .art-right { right: -120px; }
+}
+
+@media (max-width: 640px) {
+  .brand-bar { top: 16px; width: calc(100% - 28px); }
+  .brand-lockup span { display: none; }
+  .brand-lockup img { width: 42px; height: 42px; }
+  .landing-hero { min-height: 720px; padding-top: 100px; }
+  .landing-hero h1 { font-size: 41px; }
+  .hero-copy { margin-top: 22px; font-size: 16px; }
+  .hero-copy br { display: none; }
+  .media-tabs { width: 100%; max-width: 360px; }
+  .media-tab { min-width: 0; width: 50%; padding: 0 12px; }
+  .upload-stage { width: 100%; }
+  .art-card { display: none; }
+  .hero-dropzone { width: 100%; min-height: 330px; padding: 42px 20px; border-radius: 28px; }
+  .choose-button { width: 100%; min-width: 0; min-height: 68px; font-size: 20px; }
+  .drop-title { font-size: 18px; }
+  .drop-note { max-width: 280px; }
 }
 
 @keyframes spin {
